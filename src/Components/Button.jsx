@@ -1,7 +1,10 @@
-export function Button({ handleToggleNotificationsStatus }) {
+export function Button({ handleToggleNotificationsStatus, buttonDisabled }) {
   return (
     <div>
-      <button onClick={() => handleToggleNotificationsStatus()}>
+      <button
+        disabled={buttonDisabled}
+        onClick={() => handleToggleNotificationsStatus()}
+      >
         Mark all as read
       </button>
     </div>

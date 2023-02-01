@@ -7,10 +7,12 @@ import { Notifications } from "./Components/Notifications";
 function App() {
   const [readMessages, setReadMessages] = useState(false);
   const [notificationsNumber, setNotificationsNumber] = useState(7);
+  const [buttonDisabled, setButtonDisabled] = useState(false);
 
   function handleToggleNotificationsStatus() {
     setReadMessages(!readMessages);
     setNotificationsNumber(0);
+    setButtonDisabled(true);
   }
 
   return (
@@ -25,6 +27,7 @@ function App() {
           </div>
           <Button
             handleToggleNotificationsStatus={handleToggleNotificationsStatus}
+            buttonDisabled={buttonDisabled}
           />
         </div>
         <Notifications readMessages={readMessages} />
